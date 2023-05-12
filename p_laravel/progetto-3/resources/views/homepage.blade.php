@@ -67,7 +67,7 @@
               <div class="col-3">
 
                 <ul class="list-group">
-                  <b class="pt-2">Comapagnia</b>
+                  <b class="pt-2">Company</b>
                   <hr>
                 @foreach ($fdeparture as $volo)
                   <li class="list-group-item">{{$volo['company']}}</li>
@@ -128,7 +128,7 @@
                   <b class="pt-2">Cover</b>
                   <hr>
                   @foreach ($farrival as $volo)
-                    <li class="list-group-item">{{$volo['cover']}}<a href="#" class="btn btn-sm btn-outline-info" role="button" aria-disabled="true">i</a></li>
+                    <li class="list-group-item">{{$volo['cover']}}<a href="{{ route('info',['ref'=>$volo['id']]) }}" class="btn btn-sm btn-outline-info" role="button" aria-disabled="true">i</a></li>
                   @endforeach
                   </ul>
               </div>

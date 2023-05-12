@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,6 @@ Route::get('/contatti',[PageController::class, 'contact'])->name('contact');
 Route::get('/dettaglio/{product}',[PageController::class, 'detail'])->name('detail');
 
 Route::get('/info/{ref}',[PageController::class, 'info'])->name('info');
-
 
 
 

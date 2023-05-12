@@ -83,10 +83,10 @@ class PageController extends Controller
     
     public function homepage(){
 
-        $f_departure = self::$flights['arrival'];
-        $f_arrival = self::$flights['departure'];
+        $f_departure = self::$flights['departure'];
+        $f_arrival = self::$flights['arrival'];
         
-        return view('homepage',['fdeparture'=>$f_departure],['farrival'=>$f_arrival]);
+        return view('homepage',['fdeparture'=>$f_departure,'farrival'=>$f_arrival]);
     }
     
     public function main(){
@@ -111,13 +111,24 @@ class PageController extends Controller
     }
 
     public function info($ref){
-
+        
         $f_departure = self::$flights['departure'];
-
+        $f_arrival = self::$flights['arrival'];
+        
+        
         foreach ($f_departure as $singolovolo){
             if($ref === $singolovolo['id']){
                 return view('info',['singleflight'=>$singolovolo]);
             }
+            elseif($ref == $singolovolo['id']) {
+                return view('info', ['singleflight' => $singolovolo]);
+            }
         }
+        foreach ($f_arrival as $singolovolo) {
+            if ($ref == $singolovolo['id']) {
+                return view('info', ['singleflight' => $singolovolo]);
+            }
+        }
+        abort(404);
     }
 }

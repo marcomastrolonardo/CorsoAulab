@@ -12,7 +12,7 @@
         <div class="container d-flex flex-wrap">
           <ul class="nav me-auto">
             <li class="nav-item"><a href="{{ route('homepage') }}" class="nav-link link-dark px-2 " aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="{{ route('about') }}" class="btn btn-primary active nav-link link-dark px-2">About</a></li>
+            <li class="nav-item"><a href="{{ route('about') }}" class="btn btn-primary nav-link link-dark px-2">About</a></li>
             <li class="nav-item"><a href="{{ route('main') }}" class="nav-link link-dark px-2">Main</a></li>
             <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link link-dark px-2">Contact</a></li>
           </ul>
@@ -38,9 +38,19 @@
       <main>
         
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="https://www.liveinup.it/blog/wp-content/uploads/2018/07/quanto-costa-un-giro-in-mongolfiera.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">{{$singleflight['id']}}</p>
+            <h1 class="card-text">Id: {{$singleflight['id']}}</h1>
+            <hr>
+
+            <!-- Condizione if per controllare la presenza di posti disponibili -->
+            @if($singleflight['seats']['total'] > $singleflight['seats']['occupied'])
+              <span class="badge text-bg-success">Posti disponibili</span>
+            @else
+              <span class="badge text-bg-danger">Posti non disponibili</span>
+            @endif
+            
+            <p>Gate: {{$singleflight['gate']}} <br> Cover: {{$singleflight['cover']}}</p>
           </div>
         </div>
 
