@@ -117,11 +117,8 @@ class PageController extends Controller
         
         
         foreach ($f_departure as $singolovolo){
-            if($ref === $singolovolo['id']){
+            if($ref == $singolovolo['id']){
                 return view('info',['singleflight'=>$singolovolo]);
-            }
-            elseif($ref == $singolovolo['id']) {
-                return view('info', ['singleflight' => $singolovolo]);
             }
         }
         foreach ($f_arrival as $singolovolo) {

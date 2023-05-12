@@ -24,13 +24,15 @@
     <main>
       <div class="container">
 
-        <ul class="list-group text-center">
+        <div class="list-group">
+          
           @foreach ($homeEl as $elemento)
-            <li class="list-group-item">
-              <a href="/{{$elemento}}">{{$elemento}}</a>
-            </li>
+          <a href="/{{$elemento}}" class="list-group-item list-group-item-action text-center" aria-current="true">
+            {{$elemento}}
+          </a>
           @endforeach
-        </ul>
+          
+        </div>
 
       </div>
 

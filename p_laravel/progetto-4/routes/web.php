@@ -14,14 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//utilizzando il Controller
+Route::get('/',[PageController::class, 'home'])->name('homepage');
 
-Route::get('/',[PageController::class,'home']);
-
-Route::get('/azienda',[PageController::class,'azienda']);
-
-Route::get('/lista-destinazioni',[PageController::class,'destinazione']);
-
-Route::get('/lista-destinazioni/{destinazione}',[PageController::class,'destinazioni']);
-
-Route::get('/form-contatti',[PageController::class,'contatti']);
+Route::get('/flights/{ref}',[PageController::class, 'infovoli'])->name('flights');
