@@ -1,0 +1,12 @@
+.departure{
+    border: solid white 2px;
+    border-radius: 20px;
+}
+.arrival{
+    border: solid white 2px;
+    border-radius: 20px;
+}
+.contenitore{
+    height: 600px;
+    background-image: url('https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg');
+}
